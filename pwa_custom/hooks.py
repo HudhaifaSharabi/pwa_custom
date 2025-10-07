@@ -4,7 +4,15 @@ app_publisher = "simssar SOFT"
 app_description = "PWA "
 app_email = "info@simssar.com"
 app_license = "mit"
+# Manifest link is injected via JS for both Desk and Website.
+# If you prefer server-side linking, ensure the path below is correct and included in head templates.
+app_include_manifest = "/assets/pwa_custom/manifest.json"
 
+# Include a lightweight registration script instead of the service worker itself.
+app_include_js = ["/assets/pwa_custom/js/pwa_register.js"]
+
+# Also include on website pages so PWA works outside Desk.
+web_include_js = ["/assets/pwa_custom/js/pwa_register.js"]
 # Apps
 # ------------------
 
@@ -241,4 +249,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
